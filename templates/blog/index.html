@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
     
 {% block main %}
+                {% if error_msg %}
+                    <p>{{ error_msg }}</p>
+               {% endif %}
                {% for article in article_list %}
                 <article class="post post-{{ article.pk }}">
                     <header class="entry-header">
