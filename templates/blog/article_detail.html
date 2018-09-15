@@ -9,13 +9,21 @@
                                                 datetime="{{ article.created_time }}">{{ article.created_time }}</time></a></span>
                 <span class="post-author"><a href="#">{{ article.author }}</a></span>
                 <span class="comments-link"><a href="#">{{ article.comment_set.count }} 评论</a></span>
-                <span class="views-count"><a href="#">588 阅读</a></span>
+                <span class="views-count"><a href="#">{{ article.views }} 阅读</a></span>
                 </div>
         </header>
         <div class="entry-content clearfix">
             {{ article.body|safe }}
+            <div class="widget-tag-cloud">
+                <ul>
+                    标签：
+                    {% for tag in article.tags.all %}
+                        <li><a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}</a></li>
+                    {% endfor %}
+                </ul>
             </div>
-        </article>
+        </div>
+    </article>
    <section class="comment-area" id="comment-area">
         <hr>
         <h3>发表评论</h3>
