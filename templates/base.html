@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ZZZ's blog</title>
+    <title>{% block title %} 首页 {% endblock %} - ZZZ's blog</title>
 
     <!-- meta -->
     <meta charset="UTF-8">
@@ -51,9 +51,9 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="cl-effect-11"><a href={% url 'blog:index' %} data-hover="首页">首页</a></li>
-                            <li class="cl-effect-11"><a href="full-width.html" data-hover="博客">博客</a></li>
-                            <li class="cl-effect-11"><a href="about.html" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
+                            <li class="cl-effect-11"><a href="https://blog.csdn.net/m0_38015368" data-hover="CSDN博客">CSDN博客</a></li>
+                            <li class="cl-effect-11"><a href={% url 'blog:about' %} data-hover="关于">关于</a></li>
+                            <li class="cl-effect-11"><a href={% url 'blog:contact' %} data-hover="联系">联系</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>

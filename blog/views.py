@@ -140,8 +140,8 @@ class IndexView(ListView):
         return data
     
 def articles(request):
-    """ 返回全部文章 """
-    raise Http404
+    """ 重定向至首页在urls 中实现 """
+    
       
 class ArticleDetailView(DetailView):
     # 这些属性的含义和 ListView 是一样的
@@ -225,3 +225,8 @@ def search(request):
     return render(request, 'blog/index.html', {'error_msg': error_msg,
                                                'article_list': article_list})
 '''
+def about(request):
+    return render(request, 'blog/about.html')
+
+def contact(request):
+    return render(request, 'blog/contact.html')
