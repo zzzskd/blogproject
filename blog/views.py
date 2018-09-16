@@ -13,7 +13,7 @@ class IndexView(ListView):
     model = Article
     template_name = 'blog/index.html'
     context_object_name = 'article_list'
-    paginate_by = 3
+    paginate_by = 6
 
     def get_context_data(self, **kwargs):
 
