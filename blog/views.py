@@ -212,19 +212,7 @@ class TagView(ListView):
     def get_queryset(self):
         tag = get_object_or_404(Tag, pk=self.kwargs.get('tag_pk'))
         return super(TagView, self).get_queryset().filter(tags=tag)
-'''
-def search(request):
-    q = request.GET.get('q')
-    error_msg = ''
 
-    if not q:
-        error_msg = "请输入关键词"
-        return render(request, 'blog/index.html', {'error_msg': error_msg})
-
-    article_list = Article.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
-    return render(request, 'blog/index.html', {'error_msg': error_msg,
-                                               'article_list': article_list})
-'''
 def about(request):
     return render(request, 'blog/about.html')
 

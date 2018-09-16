@@ -6,7 +6,7 @@
             <h1 class="entry-title">{{ article.title }}</h1>
             <div class="entry-meta">
                 <span class="post-category"><a href="{% url 'blog:category' article.category.pk %}">{{ article.category.name }}</a></span>
-                <span class="post-date"><a href="#"><time class="entry-date"
+                <span class="post-date"><a href="{% url 'blog:archives' article.created_time.year article.created_time.month %}"><time class="entry-date"
                                                 datetime="{{ article.created_time }}">{{ article.created_time }}</time></a></span>
                 <span class="post-author"><a href="#">{{ article.author }}</a></span>
                 <span class="comments-link"><a href="#">{{ article.comment_set.count }} 评论</a></span>
